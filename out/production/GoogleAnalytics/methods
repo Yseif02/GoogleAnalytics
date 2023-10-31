@@ -1,0 +1,94 @@
+
+    /**
+     * Validate the event in the following exact order:
+     * 1) if the event is null, print out "null event" and return false.
+     * 2) check that it has 4 parts, separated by ":". If not, print out "Event is missing at
+     least one component: " followed by the event, and return false.
+     * 3) validate the path, as per the comments above the isValidPath method
+     * 4) validate the time, as per the comments above the isValidTimeOnPage method
+     * 5) validate the conversion value, as per the comments above the isValidConversionValue
+     method
+     * 6) validate the acquisition, as per the comments above the isValidAcquisition method
+     * This method must use the other validation methods, listed below.
+     * @see #isValidPath(String)
+     * @see #isValidTimeOnPage(String)
+     * @see #isValidConversionValue(String)
+     * @see #isValidAcquisition(String)
+     * @param event
+     * @return
+     */
+    public static boolean isValidEvent(String event)
+    /**
+     * if acquisition is null, print out "null acquisition" and return false.
+     * if acquisition is one of search, direct, or referral, return true. Otherwise, print
+     out "Acquisition must be one of search, direct, or referral. Invalid acquisition: "
+     followed by the value of the acquisition parameter and return false
+     * @param acquisition
+     * @return
+     */
+    public static boolean isValidAcquisition(String acquisition)
+    /**
+     3
+     * if the conversion value is not a positive dollar amount (a dollar sign, followed by
+     numbers, and up to 2 numbers after a decimal point), print out
+     * "The conversion value must be a positive dollar amount. Invalid conversion value: "
+     (note the space after the colon) followed by the value, and return false. Null is
+     considered an invalid value. Otherwise, return true.
+     * @param value
+     * @return
+     */
+    public static boolean isValidConversionValue(String value)
+    /**
+     * If the string can't be converted to a positive integer, print out "Invalid time on
+     page: " (be sure to include the blank space after the colon) followed by time, and return
+     false. Null is considered an invalid value. Otherwise, return true
+     */
+    public static boolean isValidTimeOnPage(String time)
+    /**
+     * If the path is null, print out "null path" and return false.
+     *
+     * Paths must end in ".html" (each letter of which can be uppercase OR lowercase). If the
+     path doesn't, print out "Paths must end with ".html". Invalid path: " followed by the
+     path that was passed in as an argument. Be sure to include the blank space after the
+     colon. Return false.
+     *
+     * Paths may only be made of letters, numbers, dashes, periods, and slashes. If the path
+     has disallowed characters, print out "Paths may only be made of letters, numbers, dashes,
+     periods, and slashes. Invalid path: " followed by the path that was passed in as an
+     argument. Be sure to include the blank space after the colon. Return false.
+     *
+     * @param path path to file - must end in ".html" (the characters "html" can be
+    uppercase, lowercase, or a mix of both, and the path is still valid). The path may
+    contain letters, dashes, periods and slashes; anything else is invalid.
+     *
+     * @return true if the path is valid, false if it is not.
+     */
+    public static boolean isValidPath(String path)
+    /**
+     * Convert the string to a positive integer.
+     * @param num
+     * @return If the string is null, not a valid integer, or negative, returns -1.
+    Otherwise, returns the result of calling Integer.parseInt
+     * @see java.lang.Integer#parseInt(String)
+     */
+    public static int toPositiveInt(String num)
+    /**
+     * This method should be used to validate the dollar amount of prices.
+     * IF all the following are true of dollars, this method returns the amount in dollars
+     and cents.
+     * 1) starts with a dollar sign
+     * 2) has no subsequent characters other than numbers and, optionally, a decimal point
+     * 3) has no more than two numbers after the decimal point
+     * If any of those are NOT true, it returns -1;
+     */
+    public static double getValidDollarAmount(String dollars)
+    /**
+ * Return an array which contains all the strings in "events" sorted in alphabetical
+ order, sorted by their paths.
+ 4
+ * If there are two events with the same path, they must appear in the returned array in
+ the same order in which they appeared in the events parameter.
+ * YOU MAY NOT use any sorting methods that are built in to the JDK or from any other
+ third party source.
+ */
+    public static String[] getSortedEvents(String[] events)
